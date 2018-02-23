@@ -57,3 +57,5 @@ gem 'aws-sdk'
 gem 'sidekiq'
 gem 'react_on_rails', '~> 10.1', '>= 10.1.1'
 gem 'webpacker', '~> 3.2', '>= 3.2.2'
+
+gem 'mini_racer', platforms: :ruby
