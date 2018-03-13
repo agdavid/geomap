@@ -1,6 +1,12 @@
 {
-  "name": "rails-starter-kit",
+  "name": "geomap",
+  "description": "Mapping application to upload and display GeoJSON data powered by Geoconnect, React, and Rails",
   "private": true,
+  "engines": {
+    "node": "^7.8.0 || ^8.0.0 || ^9.2.0",
+    "npm": "^4.4.4 || ^5.0.0",
+    "yarn": "^1.0.0"
+  },
   "dependencies": {
     "@rails/webpacker": "^3.2.2",
     "babel-preset-react": "^6.24.1",
@@ -13,5 +19,13 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^2.11.1"
-  }
+  },
+  "repository": {
+    "url": "https://github.com/agdavid/geomap",
+    "type": "git"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ]
 }
