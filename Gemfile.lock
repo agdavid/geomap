@@ -577,7 +577,6 @@ GEM
       railties (>= 4.2.0, < 5.3)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
-    safety_mailer (0.0.10)
     sass (3.5.5)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -651,7 +650,6 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.4)
   react_on_rails (~> 10.1, >= 10.1.1)
-  safety_mailer (~> 0.0.10)
   sass-rails (~> 5.0)
   selenium-webdriver
   sidekiq

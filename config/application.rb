@@ -16,11 +16,8 @@ module RailsStarterKit
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += %W(#{config.root}/lib)
 
-    config.action_mailer.delivery_method = :safety_mailer
-    config.action_mailer.safety_mailer_settings = {
-      allowed_matchers: [ /standardco.de/ ],
-      delivery_method: :smtp,
-      delivery_method_settings: {
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
         :address              => ENV["MAILER_HOST"],
         :port                 => ENV["MAILER_PORT"],
         :user_name            => ENV["MAILER_USERNAME"],
@@ -28,9 +25,8 @@ module RailsStarterKit
         :authentication       => :plain,
         :enable_starttls_auto => true
       }
-    }
-    config.action_mailer.default_options = {
-      :from                   => ENV["MAILER_FROM"]
-    }
+      config.action_mailer.default_options = {
+        :from                 => ENV["MAILER_FROM"]
+      }
   end
 end
