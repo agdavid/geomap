@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { updateName } from '../actions/index';
 import { bindActionCreators } from 'redux';
 // Select the component to promote
-import HelloWorld from '../components/HelloWorld';
+import Sidebar from '../components/Sidebar';
 
 // Specify which aspect of Redux global state are props
 function mapStateToProps(state) {
@@ -21,4 +21,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 // Connect component with new props { name, updateName }
-export default connect(mapStateToProps, mapDispatchToProps)(HelloWorld);
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

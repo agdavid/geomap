@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-class HelloWorld extends Component {
+class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.onInputChange=this.onInputChange.bind(this);
@@ -13,9 +13,12 @@ class HelloWorld extends Component {
 
   render() {
     return(
-      <div>
+      <div className="sidebar">
         <h3>
           Hello, {this.props.name}!
+        </h3>
+        <h3>
+          Welcome to Geomap
         </h3>
         <hr />
         <form >
@@ -34,9 +37,9 @@ class HelloWorld extends Component {
   }
 }
 
-HelloWorld.propTypes = {
+Sidebar.propTypes = {
   name: PropTypes.string.isRequired,
   updateName: PropTypes.func.isRequired,
 };
 
-export default HelloWorld;
+export default Sidebar;
