@@ -9,14 +9,12 @@ import GoogleMapContainer from '../containers/GoogleMapContainer';
 // This is how you get props from the Rails view into the redux store.
 // This code here binds your smart component to the redux store.
 const App = (props) => (
-  <div>
-    <Provider store={configureStore(props)}>
+  <Provider store={configureStore(props)}>
+    <div>
       <SidebarContainer />
-    </Provider>
-    <Provider store={configureStore(props)}>
       <GoogleMapContainer />
-    </Provider>
-  </div>
+    </div>
+  </Provider>
 );
 
 export default App;
