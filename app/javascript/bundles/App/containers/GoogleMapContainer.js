@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { updateName } from '../actions/index';
 import { bindActionCreators } from 'redux';
 // Select the component to promote
-import ShowMap from '../components/ShowMap';
+import GoogleMap from '../components/GoogleMap';
 
 // Specify which aspect of Redux global state are props
 function mapStateToProps(state) {
@@ -23,4 +23,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 // Connect component with new props { propName, actionCreatorName }
-export default connect(mapStateToProps, mapDispatchToProps)(ShowMap);
+export default connect(mapStateToProps, mapDispatchToProps)(GoogleMap);

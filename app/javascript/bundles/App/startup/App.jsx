@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 
 import configureStore from '../store/appStore';
 import HelloWorldContainer from '../containers/HelloWorldContainer';
-import ShowMapContainer from '../containers/ShowMapContainer';
+import GoogleMapContainer from '../containers/GoogleMapContainer';
 
 // See documentation for https://github.com/reactjs/react-redux.
 // This is how you get props from the Rails view into the redux store.
@@ -14,7 +14,7 @@ const App = (props) => (
       <HelloWorldContainer />
     </Provider>
     <Provider store={configureStore(props)}>
-      <ShowMapContainer />
+      <GoogleMapContainer />
     </Provider>
   </div>
 );
