@@ -1,6 +1,10 @@
-import { HELLO_WORLD_NAME_UPDATE } from '../constants/index';
+import {
+  HELLO_WORLD_NAME_UPDATE
+} from '../constants/index';
 
-export default function nameReducer(state = '', action) {
+const INITIAL_STATE = '';
+
+export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case HELLO_WORLD_NAME_UPDATE:
       return action.text;
