@@ -1,3 +1,34 @@
+# Heroku
+
+## Creating Rails, React, MySQL Heroku App
+
+1. Create Heroku app: `heroku create _YOURAPPNAME_`
+2. Add MySQL Heroku add-on (For example: JawsDB)
+3. Create config var `DATABASE_URL` and set equal to the MySQL url string from the add-on
+4. Update config var `DATABASE_URL` to begin with adapter `mysql2`
+5. Push to Heroku: `git push _REMOTENAME_ _LOCALBRANCHNAME_:_REMOTEBRANCHNAME_` (*Build will probably fail - this is OK*)
+6. Add proper buildpacks for React and Ruby:
+
+    `$ heroku buildpacks:clear -r _REMOTENAME_`
+    `$ heroku buildpacks:set heroku/nodejs -r _REMOTENAME_`
+    `$ heroku buildpacks:add heroku/ruby --index 2  -r _REMOTENAME_`
+
+7. Push to Heroku: `git push _REMOTENAME_ _LOCALBRANCHNAME_:_REMOTEBRANCHNAME_`
+8. Set remaining Heroku config vars
+9. Run migration: `heroku run rake db:migrate -r _REMOTENAME_`
+
+
+## Deploying to Heroku
+
+Deployment generally follows the standard process.  A possible issue are the overlapping package managers of yarn and npm.  If there is an issue with yarn and npm, the console will instruct you, as follows:
+
+1. If present in repo, delete: `package-lock.json`
+2. Run: `yarn install`
+3. Prepare commit: `git add yarn.lock`
+4. Commit: `git commit -m "Updated Yarn lockfile"``
+5. Push to Heroku: `git push _REMOTENAME_ _LOCALBRANCHNAME_:_REMOTEBRANCHNAME_`     
+
+
 # Rails Starter Kit
 
 Rails Starter Kit was created as a way to save time when starting a new Rails project. We have taken the most common functionality and configuration in our existing Rails projects, and put those into this project. Simply clone this project, and change the git remote to your remote repository. Rails Starter Kit is ready to host on Heroku.
