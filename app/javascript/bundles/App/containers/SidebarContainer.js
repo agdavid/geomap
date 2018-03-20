@@ -2,7 +2,7 @@
 
 // Connect to Redux global state and action creator functions
 import { connect } from 'react-redux';
-import { updateName } from '../actions/index';
+import { updateName } from '../actions/';
 import { bindActionCreators } from 'redux';
 // Select the component to promote
 import Sidebar from '../components/Sidebar';

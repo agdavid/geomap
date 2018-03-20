@@ -1,6 +1,6 @@
 import {
   HELLO_WORLD_NAME_UPDATE
-} from '../constants/index';
+} from '../constants/';
 
 export function updateName(text) {
   return {
