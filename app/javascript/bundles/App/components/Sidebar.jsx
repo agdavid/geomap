@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import CountryList from './CountryList';
 
 class Sidebar extends Component {
   constructor(props) {
@@ -9,6 +10,10 @@ class Sidebar extends Component {
 
   onInputChange(e) {
     this.props.updateName(e.target.value);
+  }
+
+  componentDidMount() {
+    this.props.loadCountries();
   }
 
   render() {
@@ -32,6 +37,7 @@ class Sidebar extends Component {
             onChange={this.onInputChange}
           />
         </form>
+        <CountryList countries={this.props.countries} />
       </div>
     );
   }
@@ -40,6 +46,7 @@ class Sidebar extends Component {
 Sidebar.propTypes = {
   name: PropTypes.string.isRequired,
   updateName: PropTypes.func.isRequired,
+  countries: PropTypes.object.isRequired,
 };
 
 export default Sidebar;
