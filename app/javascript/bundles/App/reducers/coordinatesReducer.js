@@ -4,9 +4,11 @@ import {
 import initialState from './initialState';
 
 function calculateCoordinates(country) {
-  console.log("In calculateCoordinates!");
-  console.log(country);
-  return initialState.coordinates;
+  // use turf included from CDN script
+  var center = turf.center(country);
+  // standard is (lng, lat) except GoogleMaps so remember to flip coordinates
+  var coordinates = { lat: center.geometry.coordinates[1], lng: center.geometry.coordinates[0] };
+  return coordinates;
 }
 
 export default function coordinatesReducer(state = initialState.coordinates, action) {
