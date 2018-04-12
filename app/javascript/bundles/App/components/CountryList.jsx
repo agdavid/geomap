@@ -26,7 +26,8 @@ class CountryList extends Component {
           id={'countries'}
           type={'select'}
           title={'Countries'}
-          options={COUNTRIES} />
+          options={COUNTRIES}
+          loadSelectedCountry={this.props.loadSelectedCountry} />
       );
     } else {
       return(

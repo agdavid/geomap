@@ -2,7 +2,11 @@
 
 // Connect to Redux global state and action creator functions
 import { connect } from 'react-redux';
-import { updateName, loadCountries } from '../actions/';
+import {
+  updateName,
+  loadCountries,
+  loadSelectedCountry
+} from '../actions/';
 import { bindActionCreators } from 'redux';
 // Select the component to promote
 import Sidebar from '../components/Sidebar';
@@ -21,6 +25,7 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     updateName: updateName,
     loadCountries: loadCountries,
+    loadSelectedCountry: loadSelectedCountry,
   }, dispatch);
 }
 

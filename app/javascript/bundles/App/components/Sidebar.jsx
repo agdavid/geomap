@@ -37,7 +37,7 @@ class Sidebar extends Component {
             onChange={this.onInputChange}
           />
         </form>
-        <CountryList countries={this.props.countries} />
+        <CountryList countries={this.props.countries} loadSelectedCountry={this.props.loadSelectedCountry} />
       </div>
     );
   }
