@@ -10,7 +10,8 @@ import GoogleMap from '../components/GoogleMap';
 // Specify which aspect of Redux global state are props
 function mapStateToProps(state) {
   return {
-    // propName: state.propName
+    country: state.country,
+    coordinates: state.coordinates,
   };
 }
 

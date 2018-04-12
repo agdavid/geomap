@@ -16,6 +16,7 @@ function mapStateToProps(state) {
   return {
     name: state.name,
     countries: state.countries,
+    country: state.country
   };
 }
 

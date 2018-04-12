@@ -7,11 +7,14 @@ class GoogleMap extends Component {
   }
 
   componentDidMount() {
+    var lat = this.props.coordinates.lat;
+    var lng = this.props.coordinates.lng;
+
     new google.maps.Map(this.refs.map, {
       zoom: 7,
       center: {
-        lat: -1.423559,
-        lng: 37.906193,
+        lat: lat,
+        lng: lng,
       }
     });
   }
