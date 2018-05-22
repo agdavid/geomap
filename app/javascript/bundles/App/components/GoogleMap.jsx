@@ -6,17 +6,35 @@ class GoogleMap extends Component {
 
   }
 
-  componentDidMount() {
-    var lat = this.props.coordinates.lat;
-    var lng = this.props.coordinates.lng;
-
-    new google.maps.Map(this.refs.map, {
+  loadMap() {
+    const mapConfig = {
       zoom: 7,
       center: {
-        lat: lat,
-        lng: lng,
+        lat: this.props.coordinates.lat,
+        lng: this.props.coordinates.lng,
       }
-    });
+    }
+    this.map = new google.maps.Map(this.refs.map, mapConfig);
+  }
+
+  componentDidMount() {
+    this.loadMap();
+    // var lat = this.props.coordinates.lat;
+    // var lng = this.props.coordinates.lng;
+    //
+    // new google.maps.Map(this.refs.map, {
+    //   zoom: 7,
+    //   center: {
+    //     lat: lat,
+    //     lng: lng,
+    //   }
+    // });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.coordinates !== this.props.coordinates) {
+      this.loadMap();
+    }
   }
 
   render() {
