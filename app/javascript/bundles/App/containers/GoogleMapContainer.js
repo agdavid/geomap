@@ -12,6 +12,7 @@ function mapStateToProps(state) {
   return {
     country: state.country,
     coordinates: state.coordinates,
+    features: state.features,
   };
 }
 

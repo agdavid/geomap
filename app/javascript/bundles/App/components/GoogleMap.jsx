@@ -6,9 +6,20 @@ class GoogleMap extends Component {
 
   }
 
+  componentDidMount() {
+    this.loadMap();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.coordinates !== this.props.coordinates) {
+      this.loadMap();
+      this.loadFeatures();
+    }
+  }
+
   loadMap() {
     const mapConfig = {
-      zoom: 7,
+      zoom: 4,
       center: {
         lat: this.props.coordinates.lat,
         lng: this.props.coordinates.lng,
@@ -17,24 +28,14 @@ class GoogleMap extends Component {
     this.map = new google.maps.Map(this.refs.map, mapConfig);
   }
 
-  componentDidMount() {
-    this.loadMap();
-    // var lat = this.props.coordinates.lat;
-    // var lng = this.props.coordinates.lng;
-    //
-    // new google.maps.Map(this.refs.map, {
-    //   zoom: 7,
-    //   center: {
-    //     lat: lat,
-    //     lng: lng,
-    //   }
-    // });
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.coordinates !== this.props.coordinates) {
-      this.loadMap();
-    }
+  loadFeatures() {
+    // features = [ {GeoJSON feature},...,{GeoJSON feature} ]
+    this.props.features.map( feature => {
+      let geojson = turf.featureCollection([feature]);
+      let districtLayer = new google.maps.Data();
+      districtLayer.addGeoJson(geojson);
+      districtLayer.setMap(this.map);
+    });
   }
 
   render() {
